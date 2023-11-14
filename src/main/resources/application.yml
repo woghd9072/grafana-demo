@@ -1,0 +1,15 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+      base-path: /
+      path-mapping:
+        health: _health
+
+    health:
+      show-details: always
+
+  health:
+    db:
+      enabled: false
