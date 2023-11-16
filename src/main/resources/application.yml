@@ -14,3 +14,9 @@ management:
   health:
     db:
       enabled: false
+
+grafana:
+  otlp:
+    onprem:
+      endpoint: http://tempo:4317
+      protocol: grpc
