@@ -27,6 +27,10 @@ dependencies {
 	// prometheus
 	runtimeOnly("io.micrometer:micrometer-registry-prometheus")
 
+	// opentelemetry
+	implementation("com.grafana:grafana-opentelemetry-starter:1.3.1")
+
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
