@@ -8,18 +8,7 @@
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <encoder>
-            <pattern>
-                <pattern>
-                    {
-                    "service_name": "demo",
-                    "trace_id": %traceId,
-                    "span_id": %spanId,
-                    "thread": %thread,
-                    "level": %5level
-                    "message": %msg
-                    }
-                </pattern>
-            </pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %5level %logger - %msg%n</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <fileNamePattern>./log/application.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
