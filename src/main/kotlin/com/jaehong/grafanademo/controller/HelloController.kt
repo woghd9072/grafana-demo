@@ -23,7 +23,7 @@ class HelloController(private val service: HelloService) {
   @GetMapping("helloLoki")
   fun helloWorldLoki(): ResponseEntity<HelloResponse> {
     val response = HelloResponse(1,"hello World")
-    logger.info("$response")
+    logger.info("id=${response.id} message=${response.message}")
     return ResponseEntity.ok().body(response)
   }
 }
