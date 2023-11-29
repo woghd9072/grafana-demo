@@ -8,7 +8,7 @@
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <encoder>
-            <pattern> timestamp=%d{yyyy-MM-dd HH:mm:ss.SSS} thread=[%thread] level=%5level %logger message=%msg%n</pattern>
+            <pattern> timestamp=%d{yyyy-MM-dd HH:mm:ss.SSS} thread=[%thread] level=%5level %logger contents=%msg%n</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <fileNamePattern>./log/application.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
