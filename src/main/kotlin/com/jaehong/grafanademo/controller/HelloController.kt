@@ -1,6 +1,7 @@
 package com.jaehong.grafanademo.controller
 
 import com.jaehong.grafanademo.service.HelloService
+import com.fasterxml.jackson.databind.ObjectMapper
 import com.jaehong.grafanademo.response.HelloResponse
 import org.slf4j.LoggerFactory
 import org.springframework.http.ResponseEntity
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController
 class HelloController(private val service: HelloService) {
 
   private val logger = LoggerFactory.getLogger(HelloController::class.java)
+  private val mapper = ObjectMapper()
 
   @GetMapping("/hello")
   fun helloWorld(): String {
@@ -22,8 +24,10 @@ class HelloController(private val service: HelloService) {
   }
   @GetMapping("helloLoki")
   fun helloWorldLoki(): ResponseEntity<HelloResponse> {
-    val response = HelloResponse(1,"hello World")
-    logger.info("id=${response.id} message=${response.message}")
+    val random = (1..1000).random()
+    val response = HelloResponse("003I0000$random","hello World")
+    val value = mapper.writeValueAsString(response)
+    logger.info(value)
     return ResponseEntity.ok().body(response)
   }
 }
