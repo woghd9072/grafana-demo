@@ -6,7 +6,7 @@ management:
         enabled: true
     web:
       exposure:
-        include: health,prometheus
+        include: health,prometheus,metrics
       base-path: /
       path-mapping:
         health: _health
@@ -18,9 +18,12 @@ management:
   health:
     db:
       enabled: false
-
-grafana:
   otlp:
-    onprem:
-      endpoint: http://localhost:4318
-      protocol: grpc
+    metrics:
+      export:
+        url: http://otel-collector:4318/v1/metrics
+        step: 10s
+    traces:
+      export:
+        url: http://otel-collector:4318/v1/traces
+        step: 10s
