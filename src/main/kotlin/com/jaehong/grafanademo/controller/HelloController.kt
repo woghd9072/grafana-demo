@@ -3,7 +3,6 @@ package com.jaehong.grafanademo.controller
 import com.jaehong.grafanademo.service.HelloService
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.jaehong.grafanademo.response.HelloResponse
-import com.jaehong.grafanademo.service.HelloService
 import org.slf4j.LoggerFactory
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
