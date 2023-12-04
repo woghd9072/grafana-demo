@@ -25,13 +25,8 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 
-	// prometheus
-//	runtimeOnly("io.micrometer:micrometer-registry-prometheus")
-
 	// opentelemetry
 	runtimeOnly("io.micrometer:micrometer-registry-otlp")
-	implementation("io.opentelemetry:opentelemetry-exporter-otlp:1.32.0")
-	implementation("io.opentelemetry:opentelemetry-api:1.32.0")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
