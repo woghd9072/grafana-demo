@@ -18,12 +18,3 @@ management:
   health:
     db:
       enabled: false
-  otlp:
-    metrics:
-      export:
-        url: http://grafana-agent:4318/v1/metrics
-        step: 10s
-    traces:
-      export:
-        url: http://grafana-agent:4318/v1/traces
-        step: 10s
